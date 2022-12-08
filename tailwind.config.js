@@ -7,6 +7,7 @@ module.exports = {
 				theme: {
 					dark: "#1E2E4D",
 					orange: "#FCAB32",
+					shadow: "#14223E"
 				},
 			},
 		},
