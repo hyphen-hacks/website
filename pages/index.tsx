@@ -3,6 +3,11 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
+import CommunityImage from "../assets/images/community.jpg";
+import GrowImage from "../assets/images/grow.jpg";
+import LearnImage from "../assets/images/learn.jpg";
+import MissionImage from "../assets/images/mission.jpg";
+
 const Home: NextPage = () => {
 	return (
 		<div>
@@ -30,6 +35,62 @@ const Home: NextPage = () => {
 						</Link>
 					</div>
 				</main>
+			</div>
+
+			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24">
+				<div className="sm:grid grid-cols-5 gap-24 items-center mt-24">
+					<div className="col-span-3">
+						<h2 className="font-bold text-4xl my-4">Mission</h2>
+						<p className="text-2xl">
+							Hyphen-Hacks is an annual 24-hour hackathon aimed at high school students from around the Bay Area with
+							diverse backgrounds and skill levels. We hope to create a space where all students are inspired to learn
+							new skills while collaborating on new inventions.
+						</p>
+					</div>
+					<div className="col-span-2 shrink">
+						<Image className="object-cover" src={MissionImage} alt="The Hyphen-Hacks 2020 team" />
+					</div>
+				</div>
+
+				<div className="sm:grid grid-cols-5 gap-24 items-center mt-24">
+					<div className="col-span-2">
+						<Image className="object-cover" src={LearnImage} alt="The Hyphen-Hacks 2020 team" />
+					</div>
+					<div className="col-span-3">
+						<h2 className="font-bold text-4xl my-4">Learn</h2>
+						<p className="text-2xl">
+							At Hyphen-Hacks, you will get the opportunity to receive mentorship from industry professionals, take
+							classes ranging from beginner topics to advanced techniques, and meet like-minded students from around the
+							Bay Area.
+						</p>
+					</div>
+				</div>
+
+				<div className="sm:grid grid-cols-5 gap-24 items-center mt-24">
+					<div className="col-span-3">
+						<h2 className="font-bold text-4xl my-4">Community</h2>
+						<p className="text-2xl">
+							We strive to foster a strong, inclusive community. Whether this is your first time programming or your
+							tenth hackathon, we want you to feel included and supported.
+						</p>
+					</div>
+					<div className="col-span-2">
+						<Image className="object-cover" src={CommunityImage} alt="The Hyphen-Hacks 2020 team" />
+					</div>
+				</div>
+
+				<div className="sm:grid grid-cols-5 gap-24 items-center mt-24">
+					<div className="col-span-2">
+						<Image className="object-cover" src={GrowImage} alt="The Hyphen-Hacks 2020 team" />
+					</div>
+					<div className="col-span-3">
+						<h2 className="font-bold text-4xl my-4">Grow</h2>
+						<p className="text-2xl">
+							Hyphen-Hacks will stretch your skills and imagination, pushing you to achieve what you never dreamed to be
+							possible. Our open, supportive atmosphere will provide a platform for you to create amazing products.
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
