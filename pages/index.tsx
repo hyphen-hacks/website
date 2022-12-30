@@ -3,16 +3,23 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
+import BridgeGraphic from "../assets/images/bridge.png";
 import CommunityImage from "../assets/images/community.jpg";
 import GrowImage from "../assets/images/grow.jpg";
 import LearnImage from "../assets/images/learn.jpg";
 import MissionImage from "../assets/images/mission.jpg";
+import { FAQQuestion } from "../components/FAQQuestion";
 
 const Home: NextPage = () => {
 	return (
 		<div>
-			<div className="container w-full flex">
-				<div className="text-[20rem] font-bold hidden sm:block absolute -z-10 right-10 opacity-10 text-black">2023</div>
+			<div className="w-full flex relative">
+				<div className="text-[20rem] font-bold hidden sm:block absolute -z-20 right-10 -top-10 opacity-10 text-black">
+					2023
+				</div>
+				<div className=" hidden sm:block absolute -z-20 right-0 opacity-50 w-3/5 animate-float">
+					<Image src={BridgeGraphic} alt="Hyphen-Hacks bridge graphic" />
+				</div>
 				<main className="max-w-5xl mx-8 mt-4 sm:mx-24 sm:mt-20">
 					<div className="flex flex-col items-center sm:items-start text-center sm:text-left">
 						<h1 className="text-4xl sm:text-8xl font-bold">Hyphen-Hacks</h1>
@@ -37,28 +44,28 @@ const Home: NextPage = () => {
 				</main>
 			</div>
 
-			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24">
+			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="about">
 				<div className="sm:grid grid-cols-5 gap-24 items-center mt-24">
 					<div className="col-span-3">
-						<h2 className="font-bold text-4xl my-4">Mission</h2>
-						<p className="text-2xl">
+						<h2 className="font-bold text-3xl sm:text-4xl my-4">Mission</h2>
+						<p className="text-lg sm:text-2xl">
 							Hyphen-Hacks is an annual 24-hour hackathon aimed at high school students from around the Bay Area with
 							diverse backgrounds and skill levels. We hope to create a space where all students are inspired to learn
 							new skills while collaborating on new inventions.
 						</p>
 					</div>
-					<div className="col-span-2 shrink">
+					<div className="col-span-2 rounded-lg overflow-hidden mt-4">
 						<Image className="object-cover" src={MissionImage} alt="The Hyphen-Hacks 2020 team" />
 					</div>
 				</div>
 
 				<div className="sm:grid grid-cols-5 gap-24 items-center mt-24">
-					<div className="col-span-2">
+					<div className="col-span-2 rounded-lg overflow-hidden mt-4">
 						<Image className="object-cover" src={LearnImage} alt="The Hyphen-Hacks 2020 team" />
 					</div>
 					<div className="col-span-3">
-						<h2 className="font-bold text-4xl my-4">Learn</h2>
-						<p className="text-2xl">
+						<h2 className="font-bold text-3xl sm:text-4xl my-4">Learn</h2>
+						<p className="text-lg sm:text-2xl">
 							At Hyphen-Hacks, you will get the opportunity to receive mentorship from industry professionals, take
 							classes ranging from beginner topics to advanced techniques, and meet like-minded students from around the
 							Bay Area.
@@ -66,31 +73,55 @@ const Home: NextPage = () => {
 					</div>
 				</div>
 
-				<div className="sm:grid grid-cols-5 gap-24 items-center mt-24">
+				<div className="sm:grid grid-cols-5 gap-24 items-center mt-20">
 					<div className="col-span-3">
-						<h2 className="font-bold text-4xl my-4">Community</h2>
-						<p className="text-2xl">
+						<h2 className="font-bold text-3xl sm:text-4xl my-4">Community</h2>
+						<p className="text-lg sm:text-2xl">
 							We strive to foster a strong, inclusive community. Whether this is your first time programming or your
 							tenth hackathon, we want you to feel included and supported.
 						</p>
 					</div>
-					<div className="col-span-2">
+					<div className="col-span-2 rounded-lg overflow-hidden mt-4">
 						<Image className="object-cover" src={CommunityImage} alt="The Hyphen-Hacks 2020 team" />
 					</div>
 				</div>
 
 				<div className="sm:grid grid-cols-5 gap-24 items-center mt-24">
-					<div className="col-span-2">
+					<div className="col-span-2 rounded-lg overflow-hidden mt-4">
 						<Image className="object-cover" src={GrowImage} alt="The Hyphen-Hacks 2020 team" />
 					</div>
 					<div className="col-span-3">
-						<h2 className="font-bold text-4xl my-4">Grow</h2>
-						<p className="text-2xl">
+						<h2 className="font-bold text-3xl sm:text-4xl my-4">Grow</h2>
+						<p className="text-lg sm:text-2xl">
 							Hyphen-Hacks will stretch your skills and imagination, pushing you to achieve what you never dreamed to be
 							possible. Our open, supportive atmosphere will provide a platform for you to create amazing products.
 						</p>
 					</div>
 				</div>
+			</div>
+
+			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24">
+				<h2 className="font-bold text-3xl sm:text-4xl my-4">FAQs</h2>
+				<FAQQuestion
+					question="What is a hackathon?"
+					answer="A hackathon is an event that usually lasts for 24 hours but can go for as long as 3 days. During this confined period, engineers, computer scientists, and designers work together to build a project from scratch, often with very little sleep. The goal of a hackathon is not to build a polished product, but to hack something together and learn new ways of solving problems. Projects created are judged by professionals and peers to win thousands of dollars in prizes!"
+				/>
+				<FAQQuestion
+					question="Who can participate?"
+					answer="Anyone who is enrolled in a high school between the 9th and 12th grades in the Bay Area may participate in Hyphen-Hacks."
+				/>
+				<FAQQuestion
+					question="Do I need prior programming knowledge to participate?"
+					answer="Not at all! We are open to students with any programming experience. Hackathons are actually a great way to learn to code, as you build upon your skills from peers, workshops, and challenges within your project. We’ll be hosting multiple workshops to help you get started and explore a range of new topics."
+				/>
+				<FAQQuestion
+					question="What is the theme?"
+					answer="The theme will be announced at the beginning of the hackathon! There may or may not be hints hidden in this website."
+				/>
+				<FAQQuestion
+					question="What are the prizes?"
+					answer="We're still coordinating prizes, and they'll be added to this website at a later date."
+				/>
 			</div>
 		</div>
 	);

@@ -38,7 +38,7 @@ export const Navbar: FunctionComponent = () => {
 
 			<div
 				className={
-					"flex flex-col justify-start items-end sm:hidden px-4 py-3 absolute right-0 h-screen transition-colors " +
+					"flex flex-col justify-start items-end sm:hidden px-4 py-3  right-0 h-screen transition-colors fixed z-10 " +
 					(open ? "bg-theme-shadow" : "")
 				}>
 				<div className="right-0">
