@@ -14,9 +14,9 @@ const Home: NextPage = () => {
 	return (
 		<div>
 			<div className="w-full flex relative">
-				<div className="text-[20rem] font-bold hidden sm:block absolute -z-20 right-10 -top-10 opacity-10 text-black">
+				{/* <div className="text-[20rem] font-bold hidden sm:block absolute -z-20 right-10 -top-10 opacity-10 text-black">
 					2023
-				</div>
+				</div> */}
 				<div className=" hidden sm:block absolute -z-20 right-0 opacity-50 w-3/5 animate-float">
 					<Image src={BridgeGraphic} alt="Hyphen-Hacks bridge graphic" />
 				</div>
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
 				</main>
 			</div>
 
-			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="about">
+			<div className="mt-8 sm:mt-56 mx-8 sm:mx-24" id="about">
 				<div className="sm:grid grid-cols-5 gap-24 items-center mt-24">
 					<div className="col-span-3">
 						<h2 className="font-bold text-3xl sm:text-4xl my-4">Mission</h2>
@@ -100,7 +100,7 @@ const Home: NextPage = () => {
 				</div>
 			</div>
 
-			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24">
+			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="faq">
 				<h2 className="font-bold text-3xl sm:text-4xl my-4">FAQs</h2>
 				<FAQQuestion
 					question="What is a hackathon?"
@@ -122,6 +122,40 @@ const Home: NextPage = () => {
 					question="What are the prizes?"
 					answer="We're still coordinating prizes, and they'll be added to this website at a later date."
 				/>
+			</div>
+
+			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="contact">
+				<h2 className="font-bold text-3xl sm:text-4xl my-4">Contact</h2>
+				<p className="text-lg sm:text-2xl my-4">
+					We are located at Lick-Wilmerding High School:{" "}
+					<a
+						className="text-theme-orange hover:underline"
+						href="https://goo.gl/maps/amhJtWweU4NdneSi8"
+						target="_blank"
+						rel="noreferrer">
+						755 Ocean Ave San Francisco, CA 94112
+					</a>
+				</p>
+				<p className="text-lg sm:text-2xl my-4">
+					We welcome your input! For general inquiries please email{" "}
+					<a
+						className="text-theme-orange hover:underline"
+						href="mailto:support@hyphen-hacks.com"
+						target="_blank"
+						rel="noreferrer">
+						support@hyphen-hacks.com
+					</a>
+				</p>
+				<p className="text-lg sm:text-2xl my-4">
+					Interested in sponsoring us? Please email us at{" "}
+					<a
+						className="text-theme-orange hover:underline"
+						href="mailto:finance@hyphen-hacks.com"
+						target="_blank"
+						rel="noreferrer">
+						finance@hyphen-hacks.com
+					</a>
+				</p>
 			</div>
 		</div>
 	);
