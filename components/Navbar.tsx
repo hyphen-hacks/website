@@ -18,13 +18,13 @@ export const Navbar: FunctionComponent = () => {
 
 				<div className="ml-auto hidden sm:flex items-center">
 					<div className="items-center font-bold text-xl uppercase gap-12 flex">
-						<Link href="/#about" className="hover:opacity-80 transition-opacity">
+						<Link href="/#about" className="hover:opacity-80 transition-opacity" scroll={false}>
 							About
 						</Link>
-						<Link href="/#faq" className="hover:opacity-80 transition-opacity">
+						<Link href="/#faq" className="hover:opacity-80 transition-opacity" scroll={false}>
 							FAQ
 						</Link>
-						<Link href="/#contact" className="hover:opacity-80 transition-opacity">
+						<Link href="/#contact" className="hover:opacity-80 transition-opacity" scroll={false}>
 							Contact
 						</Link>
 						<Link

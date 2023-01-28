@@ -5,4 +5,5 @@
 html {
 	color-scheme: dark;
 	background-color: #1e2e4d;
+	scroll-behavior: smooth;
 }
