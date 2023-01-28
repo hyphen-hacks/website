@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 				{/* <div className="text-[20rem] font-bold hidden sm:block absolute -z-20 right-10 -top-10 opacity-10 text-black">
 					2023
 				</div> */}
-				<div className=" hidden sm:block absolute -z-20 right-0 opacity-50 w-3/5 animate-float">
+				<div className="hidden sm:block absolute -z-20 right-0 opacity-50 w-3/5 animate-float">
 					<Image src={BridgeGraphic} alt="Hyphen-Hacks bridge graphic" />
 				</div>
 				<main className="max-w-5xl mx-8 mt-4 sm:mx-24 sm:mt-20">
@@ -158,9 +158,9 @@ const Home: NextPage = () => {
 				</p>
 			</div>
 
-			<div className="mt-8 sm:mt-36 mb-24 mx-8 sm:mx-24" id="contact">
+			<div className="mt-24 mb-12 sm:mt-36 sm:mb-24 mx-8 sm:mx-24" id="contact">
 				<div className="text-center">
-					<h1 className="text-8xl font-extrabold">Join for Free!</h1>
+					<h1 className="text-5xl md:text-8xl font-extrabold">Join for Free!</h1>
 					<div className="mt-12">
 						<Link
 							className="bg-theme-orange text-black px-6 py-3 hover:opacity-80 transition-opacity rounded-sm font-bold text-lg uppercase"

@@ -5,8 +5,8 @@ const Apply: NextPage = () => {
 		<div>
 			<div className="w-full flex">
 				<div className="max-w-5xl mx-auto">
-					<div className="text-center">
-						<h1 className="text-8xl font-extrabold  underline decoration-theme-orange">Apply</h1>
+					<div className="text-center mx-4 md:mx-0">
+						<h1 className="text-7xl md:text-8xl font-extrabold  underline decoration-theme-orange">Apply</h1>
 						<p className="mt-6 text-xl">
 							Because Hyphen-Hacks is a free event, we must limit the number of people who can attend. Please complete
 							our short application process to attend Hyphen-Hacks 2023.

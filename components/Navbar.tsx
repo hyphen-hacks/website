@@ -54,19 +54,19 @@ export const Navbar: FunctionComponent = () => {
 					</button>
 				</div>
 				<div className={"flex flex-col items-end transition-[width] overflow-hidden " + (open ? "w-36" : "w-0")}>
-					<Link href="#about" className="hover:opacity-80 transition-opacity p-2">
+					<Link href="/#about" className="hover:opacity-80 transition-opacity p-2" scroll={false}>
 						About
 					</Link>
-					<Link href="#faq" className="hover:opacity-80 transition-opacity p-2">
+					<Link href="/#faq" className="hover:opacity-80 transition-opacity p-2" scroll={false}>
 						FAQ
 					</Link>
-					<Link href="#contact" className="hover:opacity-80 transition-opacity p-2">
+					<Link href="/#contact" className="hover:opacity-80 transition-opacity p-2" scroll={false}>
 						Contact
 					</Link>
 					<Link
 						className="bg-theme-orange px-6 py-3 text-black hover:opacity-80 transition-opacity rounded-sm p-3 my-2"
 						href="/apply">
-						Apply
+						Register
 					</Link>
 				</div>
 			</div>
