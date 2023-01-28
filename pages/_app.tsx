@@ -1,6 +1,7 @@
 import { Space_Mono } from "@next/font/google";
 import type { AppProps } from "next/app";
 
+import Footer from "../components/Footer";
 import { Navbar } from "../components/Navbar";
 import "../styles/globals.css";
 
@@ -14,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<div className="flex-1">
 					<Component {...pageProps} />
 				</div>
-				{/* <Footer /> */}
+				<Footer />
 			</div>
 		</>
 	);

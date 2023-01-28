@@ -33,7 +33,7 @@ const Home: NextPage = () => {
 						<Link
 							className="border-theme-orange border-4 bg-theme-orange px-5 py-2 text-black hover:opacity-80 transition-opacity rounded-sm"
 							href="/apply">
-							Apply
+							Register
 						</Link>
 						<Link
 							className="border-theme-orange border-4 box-border px-5 py-2 hover:bg-theme-orange/40 transition-colors rounded-sm"
@@ -128,34 +128,47 @@ const Home: NextPage = () => {
 				<h2 className="font-bold text-3xl sm:text-4xl my-4">Contact</h2>
 				<p className="text-lg sm:text-2xl my-4">
 					We are located at Lick-Wilmerding High School:{" "}
-					<a
+					<Link
 						className="text-theme-orange hover:underline"
 						href="https://goo.gl/maps/amhJtWweU4NdneSi8"
 						target="_blank"
 						rel="noreferrer">
 						755 Ocean Ave San Francisco, CA 94112
-					</a>
+					</Link>
 				</p>
 				<p className="text-lg sm:text-2xl my-4">
 					We welcome your input! For general inquiries please email{" "}
-					<a
+					<Link
 						className="text-theme-orange hover:underline"
 						href="mailto:support@hyphen-hacks.com"
 						target="_blank"
 						rel="noreferrer">
 						support@hyphen-hacks.com
-					</a>
+					</Link>
 				</p>
 				<p className="text-lg sm:text-2xl my-4">
 					Interested in sponsoring us? Please email us at{" "}
-					<a
+					<Link
 						className="text-theme-orange hover:underline"
 						href="mailto:finance@hyphen-hacks.com"
 						target="_blank"
 						rel="noreferrer">
 						finance@hyphen-hacks.com
-					</a>
+					</Link>
 				</p>
+			</div>
+
+			<div className="mt-8 sm:mt-36 mb-24 mx-8 sm:mx-24" id="contact">
+				<div className="text-center">
+					<h1 className="text-8xl font-extrabold">Join for Free!</h1>
+					<div className="mt-12">
+						<Link
+							className="bg-theme-orange text-black px-6 py-3 hover:opacity-80 transition-opacity rounded-sm font-bold text-lg uppercase"
+							href="/apply">
+							Register
+						</Link>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

@@ -8,8 +8,8 @@ const Apply: NextPage = () => {
 					<div className="text-center">
 						<h1 className="text-8xl font-extrabold  underline decoration-theme-orange">Apply</h1>
 						<p className="mt-6 text-xl">
-							Because Hyphen-Hacks is a free event, we must limit the number of people who can attend Hyphen-Hacks.
-							Please complete our short application process to attend Hyphen-Hacks 2023.
+							Because Hyphen-Hacks is a free event, we must limit the number of people who can attend. Please complete
+							our short application process to attend Hyphen-Hacks 2023.
 						</p>
 					</div>
 					<div className="my-8">
@@ -18,7 +18,7 @@ const Apply: NextPage = () => {
 								<div className="bg-white px-4 py-5 sm:p-6">
 									<div className="grid grid-cols-6 gap-6">
 										<div className="col-span-6 sm:col-span-3">
-											<label for="first-name" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
 												First name
 											</label>
 											<input
@@ -31,33 +31,33 @@ const Apply: NextPage = () => {
 										</div>
 
 										<div className="col-span-6 sm:col-span-3">
-											<label for="last-name" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="last-name" className="block text-sm font-medium text-gray-700">
 												Last name
 											</label>
 											<input
 												type="text"
 												name="last-name"
 												id="last-name"
-												autocomplete="family-name"
+												autoComplete="family-name"
 												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300  focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
 											/>
 										</div>
 
 										<div className="col-span-6 sm:col-span-2">
-											<label for="email-address" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
 												Email address
 											</label>
 											<input
 												type="text"
 												name="email-address"
 												id="email-address"
-												autocomplete="email"
+												autoComplete="email"
 												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300 focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
 											/>
 										</div>
 
 										<div className="col-span-6 sm:col-span-2">
-											<label for="birthday" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="birthday" className="block text-sm font-medium text-gray-700">
 												Birthday
 											</label>
 											<input
@@ -69,13 +69,13 @@ const Apply: NextPage = () => {
 										</div>
 
 										<div className="col-span-6 sm:col-span-2">
-											<label for="gender" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="gender" className="block text-sm font-medium text-gray-700">
 												Gender
 											</label>
 											<select
 												id="gender"
 												name="gender"
-												autocomplete="gender"
+												autoComplete="gender"
 												className="mt-1 block w-full rounded-md border-gray-300 bg-white py-2 px-3 shadow-sm outline-none border-2 focus:border-theme-orange focus:ring-theme-orange sm:text-sm">
 												<option selected disabled>
 													Select
@@ -88,7 +88,7 @@ const Apply: NextPage = () => {
 										</div>
 
 										<div className="col-span-6 sm:col-span-4">
-											<label for="school" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="school" className="block text-sm font-medium text-gray-700">
 												School
 											</label>
 											<input
@@ -100,7 +100,7 @@ const Apply: NextPage = () => {
 										</div>
 
 										<div className="col-span-6 sm:col-span-2">
-											<label for="graduation-year" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="graduation-year" className="block text-sm font-medium text-gray-700">
 												Graduation Year
 											</label>
 											<input
@@ -112,7 +112,7 @@ const Apply: NextPage = () => {
 										</div>
 
 										<div className="col-span-6">
-											<label for="why-attend" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="why-attend" className="block text-sm font-medium text-gray-700">
 												Why would you like to attend Hyphen-Hacks?
 											</label>
 											<input
@@ -124,7 +124,7 @@ const Apply: NextPage = () => {
 										</div>
 
 										<div className="col-span-6">
-											<label for="software-experience" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="software-experience" className="block text-sm font-medium text-gray-700">
 												What experience do you have with coding?
 											</label>
 											<input
@@ -136,7 +136,7 @@ const Apply: NextPage = () => {
 										</div>
 
 										<div className="col-span-6">
-											<label for="hackathon-experience" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="hackathon-experience" className="block text-sm font-medium text-gray-700">
 												Have you participated in a hackathon before?
 											</label>
 											<input
@@ -148,7 +148,7 @@ const Apply: NextPage = () => {
 										</div>
 
 										<div className="col-span-6 sm:col-span-2">
-											<label for="laptop" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="laptop" className="block text-sm font-medium text-gray-700">
 												Do you have a laptop?
 											</label>
 											<select
@@ -164,7 +164,7 @@ const Apply: NextPage = () => {
 										</div>
 
 										<div className="col-span-6 sm:col-span-2">
-											<label for="accommodations" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="accommodations" className="block text-sm font-medium text-gray-700">
 												Do you need accommodations?
 											</label>
 											<select
@@ -180,7 +180,7 @@ const Apply: NextPage = () => {
 										</div>
 
 										<div className="col-span-6">
-											<label for="hackathon-experience" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="hackathon-experience" className="block text-sm font-medium text-gray-700">
 												Any additional comments?
 											</label>
 											<input
