@@ -1,6 +1,50 @@
 import { NextPage } from "next";
+import { BaseSyntheticEvent, FormEvent } from "react";
 
 const Apply: NextPage = () => {
+	const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+		console.log(event);
+		// Stop the form from submitting and refreshing the page.
+		event.preventDefault();
+
+		// Get data from the form.
+		const data: any = {};
+
+		const inputContainer = document.getElementById("inputContainer")!;
+		console.log(inputContainer);
+		Array.from(inputContainer.children).forEach(inputBlock => {
+			const inputElem = inputBlock.getElementsByTagName("input")[0] || inputBlock.getElementsByTagName("select")[0];
+			if (!inputElem.id) return;
+			let value: string | boolean = inputElem.checked || inputElem.value;
+			console.log(value);
+			if (value === "true" && inputElem.tagName === "SELECT") value = true;
+			if (value === "false" && inputElem.tagName === "SELECT") value = false;
+			data[inputElem.id] = value;
+		});
+
+		console.log(data);
+
+		// Send the data to the server in JSON format.
+		const JSONdata = JSON.stringify(data);
+
+		// API endpoint where we send form data.
+		const endpoint = "/api/apply/attendee";
+
+		// Form the request for sending data to the server.
+		const options = {
+			// The method is POST because we are sending data.
+			method: "POST",
+			// Tell the server we're sending JSON.
+			headers: {
+				"Content-Type": "application/json",
+			},
+			// Body of the request is the JSON data we created above.
+			body: JSONdata,
+		};
+
+		const response = await fetch(endpoint, options);
+	};
+
 	return (
 		<div>
 			<div className="w-full flex">
@@ -13,85 +57,98 @@ const Apply: NextPage = () => {
 						</p>
 					</div>
 					<div className="my-8">
-						<form action="#" method="POST">
+						<form action="#" method="POST" onSubmit={handleSubmit}>
 							<div className="overflow-hidden shadow sm:rounded-md text-black">
 								<div className="bg-white px-4 py-5 sm:p-6">
-									<div className="grid grid-cols-6 gap-6">
-										<div className="col-span-6 sm:col-span-3">
-											<label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
+									<div className="grid grid-cols-12 gap-6" id="inputContainer">
+										<div className="col-span-12 sm:col-span-5">
+											<label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
 												First name
 											</label>
 											<input
+												required
 												type="text"
-												name="first-name"
-												id="first-name"
+												name="firstName"
+												id="firstName"
 												autoComplete="given-name"
 												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300  focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
 											/>
 										</div>
 
-										<div className="col-span-6 sm:col-span-3">
-											<label htmlFor="last-name" className="block text-sm font-medium text-gray-700">
+										<div className="col-span-12 sm:col-span-5">
+											<label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
 												Last name
 											</label>
 											<input
+												required
 												type="text"
-												name="last-name"
-												id="last-name"
+												name="lastName"
+												id="lastName"
 												autoComplete="family-name"
 												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300  focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
 											/>
 										</div>
 
 										<div className="col-span-6 sm:col-span-2">
-											<label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
+											<label htmlFor="pronouns" className="block text-sm font-medium text-gray-700">
+												Pronouns
+											</label>
+											<input
+												required
+												type="text"
+												name="pronouns"
+												id="pronouns"
+												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300 focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
+											/>
+										</div>
+
+										<div className="col-span-12 sm:col-span-4">
+											<label htmlFor="email" className="block text-sm font-medium text-gray-700">
 												Email address
 											</label>
 											<input
+												required
 												type="text"
-												name="email-address"
-												id="email-address"
+												name="email"
+												id="email"
 												autoComplete="email"
 												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300 focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
 											/>
 										</div>
 
-										<div className="col-span-6 sm:col-span-2">
-											<label htmlFor="birthday" className="block text-sm font-medium text-gray-700">
-												Birthday
+										<div className="col-span-12 sm:col-span-4">
+											<label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">
+												Phone number
 											</label>
 											<input
+												required
 												type="text"
-												name="birthday"
-												id="birthday"
+												name="phoneNumber"
+												id="phoneNumber"
+												autoComplete="phone"
 												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300 focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
 											/>
 										</div>
 
-										<div className="col-span-6 sm:col-span-2">
-											<label htmlFor="gender" className="block text-sm font-medium text-gray-700">
-												Gender
+										<div className="col-span-12 sm:col-span-4">
+											<label htmlFor="birthDate" className="block text-sm font-medium text-gray-700">
+												Birthday
 											</label>
-											<select
-												id="gender"
-												name="gender"
-												autoComplete="gender"
-												className="mt-1 block w-full rounded-md border-gray-300 bg-white py-2 px-3 shadow-sm outline-none border-2 focus:border-theme-orange focus:ring-theme-orange sm:text-sm">
-												<option selected disabled>
-													Select
-												</option>
-												<option>Male</option>
-												<option>Female</option>
-												<option>Other</option>
-												<option>Prefer not to say</option>
-											</select>
+											<input
+												required
+												type="text"
+												name="birthDate"
+												id="birthDate"
+												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300 focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
+											/>
 										</div>
 
-										<div className="col-span-6 sm:col-span-4">
+										<div className="col-span-12 sm:col-span-8">
 											<label htmlFor="school" className="block text-sm font-medium text-gray-700">
 												School
 											</label>
 											<input
+												required
 												type="text"
 												name="school"
 												id="school"
@@ -99,103 +156,164 @@ const Apply: NextPage = () => {
 											/>
 										</div>
 
-										<div className="col-span-6 sm:col-span-2">
-											<label htmlFor="graduation-year" className="block text-sm font-medium text-gray-700">
+										<div className="col-span-12 sm:col-span-4">
+											<label htmlFor="gradYear" className="block text-sm font-medium text-gray-700">
 												Graduation Year
 											</label>
 											<input
+												required
 												type="text"
-												name="graduation-year"
-												id="graduation-year"
+												name="gradYear"
+												id="gradYear"
 												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300 focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
 											/>
 										</div>
 
-										<div className="col-span-6">
-											<label htmlFor="why-attend" className="block text-sm font-medium text-gray-700">
-												Why would you like to attend Hyphen-Hacks?
-											</label>
-											<input
-												type="text"
-												name="why-attend"
-												id="why-attend"
-												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300  focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
-											/>
-										</div>
-
-										<div className="col-span-6">
-											<label htmlFor="software-experience" className="block text-sm font-medium text-gray-700">
-												What experience do you have with coding?
-											</label>
-											<input
-												type="text"
-												name="software-experience"
-												id="software-experience"
-												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300  focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
-											/>
-										</div>
-
-										<div className="col-span-6">
-											<label htmlFor="hackathon-experience" className="block text-sm font-medium text-gray-700">
-												Have you participated in a hackathon before?
-											</label>
-											<input
-												type="text"
-												name="hackathon-experience"
-												id="hackathon-experience"
-												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300  focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
-											/>
-										</div>
-
-										<div className="col-span-6 sm:col-span-2">
-											<label htmlFor="laptop" className="block text-sm font-medium text-gray-700">
-												Do you have a laptop?
+										<div className="col-span-12 sm:col-span-4">
+											<label htmlFor="wantTeam" className="block text-sm font-medium text-gray-700">
+												Do you want to compete with a team?
 											</label>
 											<select
-												id="laptop"
-												name="laptop"
+												required
+												id="wantTeam"
+												name="wantTeam"
 												className="mt-1 block w-full rounded-md border-gray-300 bg-white py-2 px-3 shadow-sm outline-none border-2 focus:border-theme-orange focus:ring-theme-orange sm:text-sm">
-												<option selected disabled>
+												<option selected disabled value="">
 													Select
 												</option>
-												<option>Yes</option>
-												<option>No, I need one for the event</option>
+												<option value="true">Yes</option>
+												<option value="false">No</option>
 											</select>
 										</div>
 
-										<div className="col-span-6 sm:col-span-2">
-											<label htmlFor="accommodations" className="block text-sm font-medium text-gray-700">
-												Do you need accommodations?
+										<div className="col-span-12 sm:col-span-4">
+											<label htmlFor="hasTeam" className="block text-sm font-medium text-gray-700">
+												Do you have a team already?
 											</label>
 											<select
-												id="accommodations"
-												name="accommodations"
+												required
+												id="hasTeam"
+												name="hasTeam"
 												className="mt-1 block w-full rounded-md border-gray-300 bg-white py-2 px-3 shadow-sm outline-none border-2 focus:border-theme-orange focus:ring-theme-orange sm:text-sm">
-												<option selected disabled>
+												<option selected disabled value="">
 													Select
 												</option>
-												<option>No</option>
-												<option>Yes</option>
+												<option value="true">Yes</option>
+												<option value="false">No</option>
 											</select>
 										</div>
 
-										<div className="col-span-6">
-											<label htmlFor="hackathon-experience" className="block text-sm font-medium text-gray-700">
+										<div className="col-span-12 sm:col-span-4">
+											<label htmlFor="teamMembers" className="block text-sm font-medium text-gray-700">
+												If so, list your team members here
+											</label>
+											<input
+												type="text"
+												name="teamMembers"
+												id="teamMembers"
+												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300  focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
+											/>
+										</div>
+
+										<div className="col-span-12 sm:col-span-4">
+											<label htmlFor="hasCodingExperience" className="block text-sm font-medium text-gray-700">
+												Do you have coding experience?
+											</label>
+											<select
+												required
+												id="hasCodingExperience"
+												name="hasCodingExperience"
+												className="mt-1 block w-full rounded-md border-gray-300 bg-white py-2 px-3 shadow-sm outline-none border-2 focus:border-theme-orange focus:ring-theme-orange sm:text-sm">
+												<option selected disabled value="">
+													Select
+												</option>
+												<option value="true">Yes</option>
+												<option value="false">No</option>
+											</select>
+										</div>
+
+										<div className="col-span-12 sm:col-span-4">
+											<label htmlFor="participatedBefore" className="block text-sm font-medium text-gray-700">
+												Have you ever joined a hackathon?
+											</label>
+											<select
+												required
+												id="participatedBefore"
+												name="participatedBefore"
+												className="mt-1 block w-full rounded-md border-gray-300 bg-white py-2 px-3 shadow-sm outline-none border-2 focus:border-theme-orange focus:ring-theme-orange sm:text-sm">
+												<option selected disabled value="">
+													Select
+												</option>
+												<option value="true">Yes</option>
+												<option value="false">No</option>
+											</select>
+										</div>
+
+										<div className="col-span-12 sm:col-span-4">
+											<label htmlFor="shirtSize" className="block text-sm font-medium text-gray-700">
+												Shirt Size (adult)
+											</label>
+											<select
+												required
+												id="shirtSize"
+												name="shirtSize"
+												className="mt-1 block w-full rounded-md border-gray-300 bg-white py-2 px-3 shadow-sm outline-none border-2 focus:border-theme-orange focus:ring-theme-orange sm:text-sm">
+												<option selected disabled value="">
+													Select
+												</option>
+												<option>XS</option>
+												<option>S</option>
+												<option>M</option>
+												<option>L</option>
+												<option>XL</option>
+												<option>2XL</option>
+												<option>3XL</option>
+											</select>
+										</div>
+
+										<div className="col-span-12 sm:col-span-6">
+											<label htmlFor="allergies" className="block text-sm font-medium text-gray-700">
+												Allergies
+											</label>
+											<input
+												type="text"
+												name="allergies"
+												id="allergies"
+												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300  focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
+											/>
+										</div>
+
+										<div className="col-span-12 sm:col-span-6">
+											<label htmlFor="comments" className="block text-sm font-medium text-gray-700">
 												Any additional comments?
 											</label>
 											<input
 												type="text"
-												name="hackathon-experience"
-												id="hackathon-experience"
+												name="comments"
+												id="comments"
 												className="bg-white px-3 py-2 mt-1 block w-full rounded-md shadow-sm outline-none border-2 border-gray-300  focus:border-theme-orange focus:ring-theme-orange sm:text-sm"
 											/>
+										</div>
+
+										<div className="flex items-center mb-4 col-span-6 sm:col-span-12">
+											<input
+												required
+												id="understandApplication"
+												type="checkbox"
+												value=""
+												className="appearance-none w-5 h-5 text-theme-orange bg-white checked:bg-theme-orange rounded border-2 border-gray-300 checked:border-theme-orange focus:ring-theme-orange"
+											/>
+											<label htmlFor="understandApplication" className="ml-2 text-sm font-medium text-gray-700">
+												Do you understand that this is an application, and does not guarantee official acceptance to the
+												event?
+											</label>
 										</div>
 									</div>
 								</div>
 								<div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
 									<button
 										type="submit"
-										className="inline-flex justify-center rounded-md border border-transparent bg-theme-orange py-2 px-4 text-sm font-medium text-black shadow-sm hover:bg-theme-orange/90 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+										className="inline-flex justify-center rounded-sm border border-transparent bg-theme-orange py-2 px-4 text-sm font-medium text-black shadow-sm hover:bg-theme-orange/90 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
 										Apply
 									</button>
 								</div>
