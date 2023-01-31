@@ -111,6 +111,10 @@ const Home: NextPage = () => {
 					answer="Anyone who is enrolled in a high school between the 9th and 12th grades in the Bay Area may participate in Hyphen-Hacks."
 				/>
 				<FAQQuestion
+					question="Where will it take place?"
+					answer="Hyphen-Hacks 2023 will take place at Lick-Wilmerding High School at 755 Ocean Ave San Francisco, CA 94112. The hackathon will be fully in-person."
+				/>
+				<FAQQuestion
 					question="Do I need prior programming knowledge to participate?"
 					answer="Not at all! We are open to students with any programming experience. Hackathons are actually a great way to learn to code, as you build upon your skills from peers, workshops, and challenges within your project. We’ll be hosting multiple workshops to help you get started and explore a range of new topics."
 				/>
