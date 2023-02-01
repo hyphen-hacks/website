@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 
 import Footer from "../components/Footer";
 import { Navbar } from "../components/Navbar";
+import { OpenGraph } from "../components/OpenGraph";
 import "../styles/globals.css";
 
 const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] });
@@ -10,6 +11,7 @@ const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
+			<OpenGraph />
 			<div className={`flex min-h-screen flex-col ${spaceMono.className}`}>
 				<Navbar />
 				<div className="flex-1">

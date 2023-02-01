@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import { FormEvent, useState } from "react";
 
+import { OpenGraph } from "../components/OpenGraph";
 import { Check } from "../components/icons/Check";
 import { Spinner } from "../components/icons/Spinner";
 
@@ -55,6 +56,7 @@ const Apply: NextPage = () => {
 
 	return (
 		<div>
+			<OpenGraph title="Apply" description="Apply to participate in the Hyphen-Hacks hackathon." />
 			<div className="w-full flex">
 				<div className="max-w-5xl mx-auto">
 					<div className="text-center mx-4 md:mx-0">

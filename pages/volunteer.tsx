@@ -1,11 +1,17 @@
 import { NextPage } from "next";
 import Link from "next/link";
 
+import { OpenGraph } from "../components/OpenGraph";
 import { VolunteerPosition } from "../components/VolunteerPosition";
 
 const Volunteer: NextPage = () => {
 	return (
 		<div>
+			<OpenGraph
+				title="Volunteer"
+				description="Volunteers are a key part of Hyphen-Hacks. Volunteers get free meals and Hyphen-Hacks swag! If you need
+								service hours, the Hyphen-Hacks team can sign off on your time commitment."
+			/>
 			<div className="w-full flex">
 				<div className="max-w-5xl mx-auto">
 					<div className="text-center mx-4 md:mx-0">
