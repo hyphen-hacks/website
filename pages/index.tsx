@@ -37,7 +37,7 @@ const Home: NextPage = () => {
 						</Link>
 						<Link
 							className="border-theme-orange border-4 box-border px-5 py-2 hover:bg-theme-orange/40 transition-colors rounded-sm"
-							href="/apply">
+							href="/volunteer">
 							Volunteer
 						</Link>
 					</div>
