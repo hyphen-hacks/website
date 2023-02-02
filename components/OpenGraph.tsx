@@ -7,7 +7,7 @@ export const OpenGraph: FunctionComponent<{ title?: string; description?: string
 	description = "Hyphen-Hacks is an annual 24-hour hackathon aimed at high school students from around the Bay Area with diverse backgrounds and skill levels.",
 }) => {
 	const router = useRouter();
-	const url = `https://truthordarebot.xyz${router.asPath}`;
+	const url = `https://hyphen-hacks.com{router.asPath}`;
 
 	return (
 		<>
@@ -23,7 +23,7 @@ export const OpenGraph: FunctionComponent<{ title?: string; description?: string
 				{/* Open Graph */}
 				<meta property="og:url" content={url} key="og-url" />
 				<meta property="og:image" content="/favicon-256x256.png" key="og-image" />
-				<meta property="og:title" content={title} key="og-title" />
+				<meta property="og:title" content={`Hyphen-Hacks | ${title}`} key="og-title" />
 				<meta property="og:description" content={description} key="og-desc" />
 				<meta property="og:locale" content="en_US" key="og-locale" />
 			</Head>
