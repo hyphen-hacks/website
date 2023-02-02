@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import Link from "next/link";
 
 import { OpenGraph } from "../components/OpenGraph";
 import { VolunteerPosition } from "../components/VolunteerPosition";

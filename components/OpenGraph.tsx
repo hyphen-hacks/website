@@ -6,13 +6,12 @@ export const OpenGraph: FunctionComponent<{ title?: string; description?: string
 	title = "24-hour hackathon for high school students",
 	description = "Hyphen-Hacks is an annual 24-hour hackathon aimed at high school students from around the Bay Area with diverse backgrounds and skill levels.",
 }) => {
-	const router = useRouter();
 	const url = `https://hyphen-hacks.com{router.asPath}`;
 
 	return (
 		<>
 			<Head>
-				<title>Hyphen-Hacks | {title}</title>
+				<title>{`Hyphen-Hacks | ${title}`}</title>
 				<meta key="description" name="description" content={description} />
 				<meta key="theme-color" name="theme-color" content="#E09116" />
 				<meta key="format-detection" name="format-detection" content="telephone=no" />
