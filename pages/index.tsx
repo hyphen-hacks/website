@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 						<p className="text-lg sm:text-3xl font-bold leading-relaxed">
 							24-hour programming competition for Bay Area students with opportunities for all levels of experience
 						</p>
-						<p className="text-md sm:text-2xl mt-4 md:mt-8">Septebmber 30th at Lick-Wilmerding High School</p>
+						<p className="text-md sm:text-2xl mt-4 md:mt-8">September 30th at Lick-Wilmerding High School</p>
 					</div>
 					<div className="flex gap-8 mt-12 font-bold text-md sm:text-xl uppercase justify-center sm:justify-start">
 						<Link

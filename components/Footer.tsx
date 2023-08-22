@@ -11,7 +11,7 @@ export const Footer: FunctionComponent = () => {
 					<div className="flex items-center justify-center md:justify-start">
 						<Logo className="w-10 h-10" />
 						<span className="text-lg sm:text-2xl font-bold uppercase ml-4">
-							Hyphen-Hacks 2023 <span className="hidden md:inline-block">&gt; March 11th @ LWHS</span>
+							Hyphen-Hacks 2023 <span className="hidden md:inline-block">&gt; September 30th @ LWHS</span>
 						</span>
 					</div>
 					<div className="flex flex-wrap justify-center items-center gap-6 ml-auto uppercase font-bold mt-8 md:mt-0">
