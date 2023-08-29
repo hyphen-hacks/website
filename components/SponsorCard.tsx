@@ -4,7 +4,7 @@ import { FunctionComponent } from "react";
 
 export const SponsorCard: FunctionComponent<{
 	name: string;
-	image: StaticImport;
+	image: string;
 	url: string;
 }> = ({ name, image, url }) => (
 	<Link href={url} target="_blank" rel="noreferrer">
