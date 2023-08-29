@@ -300,7 +300,7 @@ const Apply: NextPage = () => {
 
 											<div className="col-span-12 sm:col-span-6">
 												<label htmlFor="allergies" className="block text-sm font-medium text-gray-700">
-													Allergies
+													Dietary Restrictions
 												</label>
 												<input
 													type="text"

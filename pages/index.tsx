@@ -7,7 +7,10 @@ import CommunityImage from "../assets/images/community.jpg";
 import GrowImage from "../assets/images/grow.jpg";
 import LearnImage from "../assets/images/learn.jpg";
 import MissionImage from "../assets/images/mission.jpg";
+import sponsorHCB from "../assets/images/sponsors/hack-club-bank.svg";
+import sponsorWolfram from "../assets/images/sponsors/wolfram.svg";
 import { FAQQuestion } from "../components/FAQQuestion";
+import { SponsorCard } from "../components/SponsorCard";
 
 const Home: NextPage = () => {
 	return (
@@ -24,7 +27,8 @@ const Home: NextPage = () => {
 						<h1 className="text-4xl sm:text-8xl font-bold">Hyphen-Hacks</h1>
 						<div className="w-20 sm:w-40 border-t-theme-orange border-t-4 my-8"></div>
 						<p className="text-lg sm:text-3xl font-bold leading-relaxed">
-							24-hour programming competition for Bay Area students with opportunities for all levels of experience
+							24-hour in-person programming competition for Bay Area students with opportunities for all levels of
+							experience
 						</p>
 						<p className="text-md sm:text-2xl mt-4 md:mt-8">September 30th at Lick-Wilmerding High School</p>
 					</div>
@@ -99,8 +103,38 @@ const Home: NextPage = () => {
 				</div>
 			</div>
 
+			{/* <div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="faq">
+				<h2 className="font-bold text-3xl sm:text-4xl my-4">Prizes</h2>
+			</div> */}
+
 			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="faq">
-				<h2 className="font-bold text-3xl sm:text-4xl my-4">FAQs</h2>
+				<h2 className="font-bold text-3xl sm:text-4xl my-4 decoration-theme-orange underline">Sponsors</h2>
+				<p className="text-lg">
+					Interested in sponsoring the event? Please email us at{" "}
+					<Link
+						className="text-theme-orange hover:underline"
+						href="mailto:finance@hyphen-hacks.com"
+						target="_blank"
+						rel="noreferrer">
+						finance@hyphen-hacks.com
+					</Link>
+				</p>
+				<div className="my-8">
+					<h3 className="font-bold text-2xl">Special Sponsors</h3>
+					<div className="flex flex-row my-4">
+						<SponsorCard image={sponsorWolfram} name="Wolfram" url="https://wolfram.com" />
+					</div>
+				</div>
+				<div className="my-8">
+					<h3 className="font-bold text-2xl">Made Possible By</h3>
+					<div className="flex flex-row my-4">
+						<SponsorCard image={sponsorHCB} name="Hack Club Bank" url="https://bank.hackclub.com/hyphen-hacks" />
+					</div>
+				</div>
+			</div>
+
+			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="faq">
+				<h2 className="font-bold text-3xl sm:text-4xl my-4 decoration-theme-orange underline">FAQs</h2>
 				<FAQQuestion
 					question="What is a hackathon?"
 					answer="A hackathon is an event that usually lasts for 24 hours but can go for as long as 3 days. During this confined period, engineers, computer scientists, and designers work together to build a project from scratch, often with very little sleep. The goal of a hackathon is not to build a polished product, but to hack something together and learn new ways of solving problems. Projects created are judged by professionals and peers to win thousands of dollars in prizes!"
@@ -128,7 +162,7 @@ const Home: NextPage = () => {
 			</div>
 
 			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="contact">
-				<h2 className="font-bold text-3xl sm:text-4xl my-4">Contact</h2>
+				<h2 className="font-bold text-3xl sm:text-4xl my-4 decoration-theme-orange underline">Contact</h2>
 				<p className="text-lg sm:text-2xl my-4">
 					We are located at Lick-Wilmerding High School:{" "}
 					<Link
@@ -163,7 +197,7 @@ const Home: NextPage = () => {
 
 			<div className="mt-24 mb-12 sm:mt-36 sm:mb-24 mx-8 sm:mx-24" id="contact">
 				<div className="text-center">
-					<h1 className="text-5xl md:text-8xl font-extrabold">Join for Free!</h1>
+					<h1 className="text-5xl md:text-8xl font-extrabold">Hack With Us!</h1>
 					<div className="mt-12">
 						<Link
 							className="bg-theme-orange text-black px-6 py-3 hover:opacity-80 transition-opacity rounded-sm font-bold text-lg uppercase"
