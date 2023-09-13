@@ -8,6 +8,7 @@ import GrowImage from "../assets/images/grow.jpg";
 import LearnImage from "../assets/images/learn.jpg";
 import MissionImage from "../assets/images/mission.jpg";
 import sponsorAOPS from "../assets/images/sponsors/aops.png";
+import sponsorGolaith from "../assets/images/sponsors/golaith.png";
 import sponsorHCB from "../assets/images/sponsors/hack-club-bank.svg";
 import sponsorWolfram from "../assets/images/sponsors/wolfram.svg";
 import { FAQQuestion } from "../components/FAQQuestion";
@@ -124,7 +125,17 @@ const Home: NextPage = () => {
 					<h3 className="font-bold text-2xl">Special Sponsors</h3>
 					<div className="flex flex-row my-4 gap-6">
 						<SponsorCard image={sponsorWolfram} name="Wolfram" url="https://wolfram.com" />
-						<SponsorCard image={sponsorAOPS} name="Wolfram" url="https://artofproblemsolving.com" lightBackground />
+						<SponsorCard
+							image={sponsorGolaith}
+							name="Golaith Automation Robotics"
+							url="https://automationroboticsarduino.com/"
+						/>
+						<SponsorCard
+							image={sponsorAOPS}
+							name="Art of Problem Solving"
+							url="https://artofproblemsolving.com"
+							lightBackground
+						/>
 					</div>
 				</div>
 				<div className="my-8">
