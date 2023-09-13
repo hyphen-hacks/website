@@ -29,7 +29,7 @@ const Home: NextPage = () => {
 						<h1 className="text-4xl sm:text-8xl font-bold">Hyphen-Hacks</h1>
 						<div className="w-20 sm:w-40 border-t-theme-orange border-t-4 my-8"></div>
 						<p className="text-lg sm:text-3xl font-bold leading-relaxed">
-							24-hour in-person programming competition for Bay Area students with opportunities for all levels of
+							In-person programming competition for Bay Area High School students with opportunities for all levels of
 							experience
 						</p>
 						<p className="text-md sm:text-2xl mt-4 md:mt-8">September 30th at Lick-Wilmerding High School</p>
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
 					<div className="col-span-3">
 						<h2 className="font-bold text-3xl sm:text-4xl my-4">Mission</h2>
 						<p className="text-lg sm:text-2xl">
-							Hyphen-Hacks is an annual 24-hour hackathon aimed at high school students from around the Bay Area with
+							Hyphen-Hacks is an annual 12-hour hackathon aimed at high school students from around the Bay Area with
 							diverse backgrounds and skill levels. We hope to create a space where all students are inspired to learn
 							new skills while collaborating on new inventions.
 						</p>
@@ -123,7 +123,7 @@ const Home: NextPage = () => {
 				</p>
 				<div className="my-8">
 					<h3 className="font-bold text-2xl">Special Sponsors</h3>
-					<div className="flex flex-row my-4 gap-6">
+					<div className="flex flex-row my-4 gap-6 flex-wrap">
 						<SponsorCard image={sponsorWolfram} name="Wolfram" url="https://wolfram.com" />
 						<SponsorCard
 							image={sponsorGolaith}
@@ -140,7 +140,7 @@ const Home: NextPage = () => {
 				</div>
 				<div className="my-8">
 					<h3 className="font-bold text-2xl">Made Possible By</h3>
-					<div className="flex flex-row my-4">
+					<div className="flex flex-row my-4 gap-6 flex-wrap">
 						<SponsorCard image={sponsorHCB} name="Hack Club Bank" url="https://bank.hackclub.com/hyphen-hacks" />
 					</div>
 				</div>
@@ -150,7 +150,7 @@ const Home: NextPage = () => {
 				<h2 className="font-bold text-3xl sm:text-4xl my-4 decoration-theme-orange underline">FAQs</h2>
 				<FAQQuestion
 					question="What is a hackathon?"
-					answer="A hackathon is an event that usually lasts for 24 hours but can go for as long as 3 days. During this confined period, engineers, computer scientists, and designers work together to build a project from scratch, often with very little sleep. The goal of a hackathon is not to build a polished product, but to hack something together and learn new ways of solving problems. Projects created are judged by professionals and peers to win thousands of dollars in prizes!"
+					answer="A hackathon is an event that usually lasts for 12 hours but can go for as long as 3 days. During this confined period, engineers, computer scientists, and designers work together to build a project from scratch, often with very little sleep. The goal of a hackathon is not to build a polished product, but to hack something together and learn new ways of solving problems. Projects created are judged by professionals and peers to win thousands of dollars in prizes!"
 				/>
 				<FAQQuestion
 					question="Who can participate?"
