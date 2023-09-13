@@ -14,6 +14,61 @@ import sponsorWolfram from "../assets/images/sponsors/wolfram.svg";
 import { FAQQuestion } from "../components/FAQQuestion";
 import { SponsorCard } from "../components/SponsorCard";
 
+const eventSchedule = [
+	{
+		time: "8:30 am - 9:00 am",
+		event: "Check-in Time",
+	},
+	{
+		time: "9:00 am - 9:30 am",
+		event: "Opening Assembly",
+	},
+	{
+		time: "9:30 am",
+		event: "Hacking Begins!",
+	},
+	{
+		time: "12:00 pm - 1:00 pm",
+		event: "Lunch Served + Social Event",
+	},
+	{
+		time: "1:00 pm",
+		event: "Workshop A",
+	},
+	{
+		time: "2:00 pm",
+		event: "Workshop B",
+	},
+	{
+		time: "3:00 pm",
+		event: "Workshop C",
+	},
+	{
+		time: "6:00 pm - 7:00 pm",
+		event: "Dinner Served + Social Event",
+	},
+	{
+		time: "8:00 pm",
+		event: "Competition Activity",
+	},
+	{
+		time: "9:00 pm",
+		event: "Project Submissions Close",
+	},
+	{
+		time: "9:00 pm - 10:00 pm",
+		event: "Judging + Hot Cocoa + S'mores",
+	},
+	{
+		time: "10:00 pm - 10:30 pm",
+		event: "Closing Ceremony + Awards",
+	},
+	{
+		time: "10:30 pm - 11:00 pm",
+		event: "Pack Up + Check Out",
+	},
+];
+
 const Home: NextPage = () => {
 	return (
 		<div>
@@ -108,6 +163,25 @@ const Home: NextPage = () => {
 			{/* <div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="faq">
 				<h2 className="font-bold text-3xl sm:text-4xl my-4">Prizes</h2>
 			</div> */}
+
+			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="contact">
+				<h2 className="font-bold text-3xl sm:text-4xl my-4 decoration-theme-orange underline">Event Schedule</h2>
+				<div className="mt-6">
+					<p className="text-xl">
+						Hyphen-Hacks will begin at <span className="text-theme-orange">8:30am</span> and end at{" "}
+						<span className="text-theme-orange">11:00pm</span>.
+					</p>
+					<table className="text-xl table-auto mt-6">
+						<tbody className="text-left">
+							{eventSchedule.map(({ time, event }, index) => (
+								<tr key={index}>
+									<th className="text-theme-orange pr-6">{time}</th> <th>{event}</th>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+			</div>
 
 			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="faq">
 				<h2 className="font-bold text-3xl sm:text-4xl my-4 decoration-theme-orange underline">Sponsors</h2>
