@@ -7,6 +7,7 @@ import CommunityImage from "../assets/images/community.jpg";
 import GrowImage from "../assets/images/grow.jpg";
 import LearnImage from "../assets/images/learn.jpg";
 import MissionImage from "../assets/images/mission.jpg";
+import sponsorAOPS from "../assets/images/sponsors/aops.png";
 import sponsorHCB from "../assets/images/sponsors/hack-club-bank.svg";
 import sponsorWolfram from "../assets/images/sponsors/wolfram.svg";
 import { FAQQuestion } from "../components/FAQQuestion";
@@ -121,8 +122,9 @@ const Home: NextPage = () => {
 				</p>
 				<div className="my-8">
 					<h3 className="font-bold text-2xl">Special Sponsors</h3>
-					<div className="flex flex-row my-4">
+					<div className="flex flex-row my-4 gap-6">
 						<SponsorCard image={sponsorWolfram} name="Wolfram" url="https://wolfram.com" />
+						<SponsorCard image={sponsorAOPS} name="Wolfram" url="https://artofproblemsolving.com" lightBackground />
 					</div>
 				</div>
 				<div className="my-8">
