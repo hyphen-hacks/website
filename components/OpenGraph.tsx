@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
 
 export const OpenGraph: FunctionComponent<{ title?: string; description?: string }> = ({
-	title = "24-hour hackathon for high school students",
-	description = "Hyphen-Hacks is an annual 24-hour hackathon aimed at high school students from around the Bay Area with diverse backgrounds and skill levels.",
+	title = "12-hour hackathon for high school students",
+	description = "Hyphen-Hacks is an annual 12-hour hackathon aimed at high school students from around the Bay Area with diverse backgrounds and skill levels.",
 }) => {
 	const url = `https://hyphen-hacks.com{router.asPath}`;
 
