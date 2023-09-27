@@ -60,11 +60,18 @@ const Apply: NextPage = () => {
 			<div className="w-full flex">
 				<div className="max-w-5xl mx-auto">
 					<div className="text-center mx-4 md:mx-0">
-						<h1 className="text-7xl md:text-8xl font-extrabold underline decoration-theme-orange">Apply</h1>
+						<h1 className="text-7xl md:text-8xl font-extrabold underline decoration-theme-orange">Register</h1>
 						<p className="mt-6 text-xl">
-							Because Hyphen-Hacks is a free event, we must limit the number of people who can attend. Please complete
-							our short application process to attend Hyphen-Hacks 2023.
+							Because Hyphen-Hacks is a free event, we must limit the number of people who can attend. At the moment, we
+							are accepting every application, but this could change at any time! Please complete our short application
+							process to attend Hyphen-Hacks 2023.
 						</p>
+						<div className="rounded-lg overflow-hidden bg-red-500/40 border-l-8 border-red-500 p-5 text-left mt-6">
+							<b>On Tuesday, September 26th, we discovered that our registration form was broken.</b> If you or any
+							friends applied between Sep 22nd - 26th, your application may not have gone through. If you have yet to
+							receive an email confirming acceptance and an error was displayed when submitting, we recommend applying
+							again below.
+						</div>
 					</div>
 					<div className="my-8">
 						<form action="#" method="POST" onSubmit={handleSubmit}>
@@ -331,8 +338,9 @@ const Apply: NextPage = () => {
 													className="appearance-none w-5 h-5 text-theme-orange bg-white checked:bg-theme-orange rounded border-2 border-gray-300 checked:border-theme-orange focus:ring-theme-orange"
 												/>
 												<label htmlFor="understandApplication" className="ml-2 text-sm font-medium text-gray-700">
-													Do you understand that this is an application, and does not guarantee official acceptance to
-													the event?
+													At the moment we are accepting every application, but this could change at any time. Do you
+													understand that this is an application, and does not guarantee official acceptance to the
+													event?
 												</label>
 											</div>
 										</div>
