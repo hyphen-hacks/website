@@ -183,7 +183,7 @@ const Home: NextPage = () => {
 				</div>
 			</div>
 
-			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="faq">
+			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="sponsors">
 				<h2 className="font-bold text-3xl sm:text-4xl my-4 decoration-theme-orange underline">Sponsors</h2>
 				<p className="text-lg">
 					Interested in sponsoring the event? Please email us at{" "}
@@ -244,7 +244,7 @@ const Home: NextPage = () => {
 				/>
 				<FAQQuestion
 					question="What are the prizes?"
-					answer="We're still coordinating prizes, and they'll be added to this website at a later date."
+					answer="We're giving away over $1,000 in prizes! Prizes include Midjourney licenses, JBL Headphones, HyperX Microphones, Anker battery banks, Arduino starter kits, and more. This list isn't finalized yet, so even more could come soon!"
 				/>
 			</div>
 
