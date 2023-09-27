@@ -164,7 +164,7 @@ const Home: NextPage = () => {
 				<h2 className="font-bold text-3xl sm:text-4xl my-4">Prizes</h2>
 			</div> */}
 
-			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="contact">
+			<div className="mt-8 sm:mt-36 mx-8 sm:mx-24" id="schedule">
 				<h2 className="font-bold text-3xl sm:text-4xl my-4 decoration-theme-orange underline">Event Schedule</h2>
 				<div className="mt-6">
 					<p className="text-xl">
